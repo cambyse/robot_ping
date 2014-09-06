@@ -69,12 +69,8 @@ private :
 ballDetector::ballDetector(): it_(nh_)
 {
     // Subscrive to input video feed and publish output video feed
-    //image_sub_ = it_.subscribe("camera/depth/image_raw", 1,
-    //  &ImageConverter::imageCb, this);
 
 	image_sub_ = it_.subscribe("camera2/rgb/image_color", 1, &ballDetector::imageCb, this);
-
-	//image_pub_ = it_.advertise("/image_converter/output_video", 1);
 
 	//params
 	minDist_ = 50;
@@ -85,7 +81,7 @@ ballDetector::ballDetector(): it_(nh_)
 
 	square_grad_sum_ = 1500;
 
-    cv::namedWindow(OPENCV_WINDOW);
+   // cv::namedWindow(OPENCV_WINDOW);
 
     //state machine
     current_state_ = NO_BALLS;
@@ -269,8 +265,8 @@ vector<Vec3f> ballDetector::detectBalls(cv::Mat & image)
 	  	       circle( image, Point(c[0], c[1]), 2, Scalar(0,255,0), 1, CV_AA);
 	  }
 	  //visu
-	  cv::imshow(OPENCV_WINDOW, image);
-	  cv::waitKey(3);
+	//  cv::imshow(OPENCV_WINDOW, image);
+	//  cv::waitKey(3);
 	      
 	  return ret_circles;
 
