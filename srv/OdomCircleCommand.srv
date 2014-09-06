@@ -1,0 +1,6 @@
+# Service used to ask for an odom circle
+
+int32 sense
+int32 velocity
+---
+bool completed

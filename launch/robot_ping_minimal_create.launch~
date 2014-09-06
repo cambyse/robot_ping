@@ -1,0 +1,24 @@
+<launch>
+
+	<node
+		pkg="robot_ping"
+		type="odom_circle.py"
+		name="odom_circle"
+	/>
+
+	<node
+		pkg="robot_ping"
+		type="move_base_square.py"
+		name="move_base_square"
+	/>
+
+	<node
+		pkg="robot_ping"
+		type="client_node.py"
+		name="client_node"
+	/>
+
+	<include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch.xml" />
+
+
+</launch>
