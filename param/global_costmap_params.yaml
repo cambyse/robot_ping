@@ -6,7 +6,7 @@ global_costmap:
    static_map: true
    transform_tolerance: 0.5
    plugins:
-	   - 
-	     name: obstacles
-	     type: "costmap_2d::ObstacleLayer"
-	     observation_sources: webcam
+   -
+        name: obstacles
+        type: "costmap_2d::ObstacleLayer"
+        observation_sources: webcam
