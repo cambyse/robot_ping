@@ -19,13 +19,4 @@ observation_sources: scan bump webcam
 
 scan: {data_type: LaserScan, topic: scan, marking: true, clearing: true, min_obstacle_height: 0.25, max_obstacle_height: 0.35}
 bump: {data_type: PointCloud2, topic: mobile_base/sensors/bumper_pointcloud, marking: true, clearing: false, min_obstacle_height: 0.0, max_obstacle_height: 0.15}
-
-webcam: {sensor_frame: 'base_link',
-  data_type: PointCloud,
-  topic: 'webcam_ball',
-  marking: true,
-  clearing: true,
-  min_obstacle_height: 0.0,
-  max_obstacle_height: 0.15,
-  expected_update_rate: 15
-}
+webcam: {data_type: PointCloud, topic: webcam_ball, marking: true, clearing: true, min_obstacle_height: 0.0, max_obstacle_height: 0.15, expected_update_rate: 15}
